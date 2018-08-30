@@ -13,6 +13,7 @@ connection = sqlite3.connect(str(sys.argv[1]))
 cursor = connection.cursor()
 
 sql_createMachine = '''
+USE testdb
 CREATE TABLE machine (
 ID int NOT NULL PRIMARY KEY,
 MAC_address VARCHAR(255) NOT NULL,
@@ -22,6 +23,7 @@ CONSTRAINT fields_unique UNIQUE(MAC_address, IP_address),
 FOREIGN KEY(ID) REFERENCES hardware(ID))
 '''
 sql_createHardware = """
+USE testdb
 CREATE TABLE hardware (
 ID int NOT NULL PRIMARY KEY,
 card_type VARCHAR(30),
@@ -32,6 +34,6 @@ hashrate REAL);
 """
 cursor.execute(sql_createMachine)
 cursor.execute(sql_createHardware)
-cursor.commit()
+connection.commit()
 cursor.close()
 

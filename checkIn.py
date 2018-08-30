@@ -22,7 +22,7 @@ def main():
     if not machineQueries.present(MAC_address,cursor):
         machineQueries.newMachine(MAC_address, IP_address,cursor)
     machineQueries.machineUpdate(MAC_address,cursor)
-    cursor.commit()
+    connection.commit()
     cursor.close()
     print("finished")
 main()
