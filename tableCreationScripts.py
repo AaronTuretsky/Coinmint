@@ -5,10 +5,10 @@ github: https://github.com/AaronTuretsky
 date:8/28/18
 """
 import sqlite3
+import sys
 
 
-
-connection = sqlite3.connect("test.db")
+connection = sqlite3.connect(str(sys.argv[1]))
 cursor = connection.cursor()
 
 sql_createMachine = '''
