@@ -15,7 +15,7 @@ def main():
     connection = sqlite3.connect(str(sys.argv[1]))
     cursor = connection.cursor()
     print("connection opened")
-    MAC_address = get_mac()
+    MAC_address = str(get_mac())
     hostname = socket.gethostname()
     IP_address = socket.gethostbyname(hostname)
 
