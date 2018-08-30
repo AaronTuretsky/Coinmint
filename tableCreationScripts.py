@@ -22,7 +22,8 @@ last_updated DATETIME,
 CONSTRAINT fields_unique UNIQUE(MAC_address, IP_address),
 FOREIGN KEY(ID) REFERENCES hardware(ID))
 '''
-sql_createHardware = """
+
+sql_createHardware = '''
 USING testdb
 CREATE TABLE hardware (
 ID int NOT NULL PRIMARY KEY,
@@ -31,7 +32,8 @@ core_clock int,
 mem_clock int,
 cards_active int,
 hashrate REAL);
-"""
+'''
+
 cursor.execute(sql_createMachine)
 cursor.execute(sql_createHardware)
 connection.commit()
