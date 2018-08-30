@@ -23,7 +23,7 @@ CONSTRAINT fields_unique UNIQUE(MAC_address, IP_address),
 FOREIGN KEY(ID) REFERENCES hardware(ID))
 '''
 
-sql_createHardware = '''
+sql_createHardware ='''
 USING testdb
 CREATE TABLE hardware (
 ID int NOT NULL PRIMARY KEY,
