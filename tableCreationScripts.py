@@ -38,7 +38,7 @@ IP_address VARCHAR(255) NOT NULL,
 last_updated DATETIME,
 CONSTRAINT fields_unique (MAC_address, IP_address),
 FOREIGN KEY(ID) REFERENCES hardware(ID));
-''')
+''' )
 cursor.execute(sql_createHardware)
 
 cursor.close()
