@@ -14,7 +14,10 @@ cursor = connection.cursor()
 
 sql_createMachine = '''
 CREATE TABLE machine (
-ID)
+ID int NOT NULL PRIMARY KEY,
+MAC_address VARCHAR(255) NOT NULL,
+IP_address VARCHAR(255) NOT NULL,
+last_updated DATETIME
 '''
 sql_createHardware = """
 CREATE TABLE hardware (
