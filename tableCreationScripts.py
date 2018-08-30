@@ -17,7 +17,7 @@ MAC_address VARCHAR(255) NOT NULL,
 IP_address VARCHAR(255) NOT NULL,
 last_updated DATETIME,
 CONSTRAINT fields_unique (MAC_address, IP_address),
-FOREIGN KEY(ID) REFERENCES hardware(ID));
+FOREIGN KEY(ID) REFERENCES hardware(ID))
 '''
 
 sql_createHardware = """
@@ -30,15 +30,7 @@ cards_active int,
 hashrate REAL);
 """
 
-cursor.execute('''
-CREATE TABLE machine (
-ID int NOT NULL PRIMARY KEY,
-MAC_address VARCHAR(255) NOT NULL,
-IP_address VARCHAR(255) NOT NULL,
-last_updated DATETIME,
-CONSTRAINT fields_unique (MAC_address, IP_address),
-FOREIGN KEY(ID) REFERENCES hardware(ID));
-''' )
+cursor.execute(sql_createMachine)
 cursor.execute(sql_createHardware)
 
 cursor.close()
