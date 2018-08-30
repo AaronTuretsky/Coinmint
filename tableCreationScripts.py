@@ -9,11 +9,11 @@ import sys
 
 
 connection = sqlite3.connect(str(sys.argv[1]))
+
 cursor = connection.cursor()
 
 sql_createMachine = '''
-CREATE TABLE machine (
-ID int NOT NULL PRIMARY KEY,
+CREATE TABLE machine ( ID int NOT NULL PRIMARY KEY,
 MAC_address VARCHAR(255) NOT NULL,
 IP_address VARCHAR(255) NOT NULL,
 last_updated DATETIME,
