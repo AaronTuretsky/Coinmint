@@ -11,9 +11,10 @@ import sys
 from uuid import getnode as get_mac
 
 def main():
+    print("running")
     connection = sqlite3.connect(sys.argv[1])
     cursor = connection.cursor()
-
+    print("connection opened")
     MAC_address = get_mac()
     hostname = socket.gethostname()
     IP_address = socket.gethostbyname(hostname)
@@ -22,3 +23,5 @@ def main():
         machineQueries.newMachine(MAC_address, IP_address,cursor)
     machineQueries.updateInfo()
     cursor.close()
+    print("finished")
+main()
