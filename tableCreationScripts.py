@@ -10,15 +10,7 @@ import sys
 connection = sqlite3.connect(sys.argv[1])
 cursor = connection.cursor()
 
-sql_createMachine = '''
-CREATE TABLE machine (
-ID int NOT NULL PRIMARY KEY,
-MAC_address VARCHAR(255) NOT NULL,
-IP_address VARCHAR(255) NOT NULL,
-last_updated DATETIME,
-CONSTRAINT fields_unique (MAC_address, IP_address),
-FOREIGN KEY(ID) REFERENCES hardware(ID));
-'''
+sql_createMachine = "ddddd"
 
 sql_createHardware = """
 CREATE TABLE hardware (
