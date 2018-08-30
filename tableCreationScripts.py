@@ -17,7 +17,9 @@ CREATE TABLE machine (
 ID int NOT NULL PRIMARY KEY,
 MAC_address VARCHAR(255) NOT NULL,
 IP_address VARCHAR(255) NOT NULL,
-last_updated DATETIME
+last_updated DATETIME,
+CONSTRAINT fields_unique UNIQUE(MAC_address, IP_address),
+FOREIGN KEY(ID) REFERENCES hardware(ID))
 '''
 sql_createHardware = """
 CREATE TABLE hardware (
