@@ -13,7 +13,6 @@ connection = sqlite3.connect(str(sys.argv[1]))
 cursor = connection.cursor()
 
 sql_createMachine = '''
-USING testdb
 CREATE TABLE machine (
 ID int NOT NULL PRIMARY KEY,
 MAC_address VARCHAR(255) NOT NULL,
@@ -24,7 +23,6 @@ FOREIGN KEY(ID) REFERENCES hardware(ID))
 '''
 
 sql_createHardware ='''
-USING testdb
 CREATE TABLE hardware (
 ID int NOT NULL PRIMARY KEY,
 card_type VARCHAR(30),
