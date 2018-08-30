@@ -12,7 +12,7 @@ from uuid import getnode as get_mac
 
 def main():
     print("running")
-    connection = sqlite3.connect(sys.argv[1])
+    connection = sqlite3.connect(str(sys.argv[1]))
     cursor = connection.cursor()
     print("connection opened")
     MAC_address = get_mac()
